@@ -1,2 +1,4 @@
 This is a demo file for studying git
 Hahaa. from tut1
+hehe
+from tut2
