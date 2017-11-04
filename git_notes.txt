@@ -35,3 +35,21 @@ git rm -r Demo
 git commit -m "some comments"
 git push
 
+====
+Cách làm việc với Git
+- Thêm remote repository
+	git remote add <name> <url>.
+	VD: git remote add origin https://github.com/AnhtuTa/Maven.git		//thường lấy tên là origin
+	//nếu remote repo đã khai báo rồi thì lệnh trên ko có tác dụng
+- Xem remote:
+	git remote
+	git remote -v
+- CHÚ Ý: Trước khi đẩy file lên remote repo thì phải update về trước đã
+	git pull origin master		//origin là tên, master là nhánh (branch)
+	
+- Nếu muốn đẩy file LẦN ĐẦU TIÊN lên git thì dùng:
+	git push -u origin master
+  Sau đó từ lần sau chỉ cần xài:
+  	git push
+
+
