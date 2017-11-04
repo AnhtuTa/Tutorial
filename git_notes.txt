@@ -1,0 +1,37 @@
+﻿upload project QLSV lên Git:
+1. Vào https://github.com/AnhtuTa tạo repository tên là QLSV trên git
+2. Trên máy tính, vào thư mục project QLSV chọn Git bash here
+3. Gõ:
+$ git remote add QLSV https://github.com/AnhtuTa/QLSV.git
+$ git push --set-upstream QLSV master
+4. done!
+
+=== Cách trên sai nhé. Làm lại như sau (trên Git có hướng dẫn sau khi tạo repository)
+Giả sử cần upload repository có tên là Maven (upload cả thử mục này lên :))
+1. Vào thư mục đó, VD: cd D:/Documents/Maven
+2. git init
+3. git add *	//Thêm tất cả các file
+4. git status	//check status
+5. git commit -m "This is just comment"
+6. git status
+7. git remote add origin https://github.com/AnhtuTa/Maven.git
+8. git push -u origin master
+9. done!
+
+Nếu vẫn ko đc thì làm như sau:
+1,2,3,4,5,6: như trên
+7. git remote add github https://github.com/AnhtuTa/Maven.git
+8. git remote -v
+9. git push -f github master
+10. done!
+
+Sau này nếu có thay đổi gì thì update lên git như sau:
+git add *
+git commit -m "some comments"
+git push
+
+Muốn xóa 1 thư mục trong repository, vd: Demo:
+git rm -r Demo
+git commit -m "some comments"
+git push
+
