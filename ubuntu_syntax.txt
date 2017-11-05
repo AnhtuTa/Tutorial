@@ -1,0 +1,141 @@
+cách cài 1 phần mềm .deb:
+1. tải file về, gỉa sử là teamviewer_11.0.67687_i386.deb
+2. vào terminal , cd đến thư mục tải file trên
+3. gõ: sudo dpkg -i teamviewer_11.0.67687_i386.deb
+4. nếu xảy ra lỗi thì gõ lệnh : sudo apt-get -f install
+5. sau đó cài lại như bước 3
+
+cách cài netbeans:
+- đầu tiên cài JDK: sudo apt-get install openjdk-8-jdk
+- vào thư mục tải netbeans về máy và mở terminal gõ: sh netbeans-8.2-linux.sh
+- tiếp tục ấn next cho tới khi xong, CHÚ Ý: nhớ chọn đúng đường dẫn tới thư mục vừa cài JDK. Trường hợp t cài là : /usr/lib/jvm/java-8-openjdk-amd64.
+
+xóa bỏ 1 phần mềm, ví dụ rar:
+- sudo apt-get remove rar : xóa ko sạch
+- sudo apt-get autoremove rar : xóa sạch
+- sudo apt-get remove --purge rar : xóa bỏ phần cấu hình, thiết lập cũng như các thư mục có liên quan
+- sudo apt-get purge rar: tương tự lệnh trên
+
+To remove the mininet following command is used:  sudo apt-get remove  mininet
+Following command is used to remove the mininet package along with its dependencies: sudo apt-get remove --auto-remove mininet
+This will remove mininet and all its dependent packages which is no longer needed in the system.
+
+Completely removing mininet with all configuration files:
+Following command should be used with care as it deletes all the configuration files and data: 
+sudo apt-get purge mininet
+or you can use following command also: sudo apt-get purge --auto-remove mininet
+Above command will remove all the configuration files and data associated with mininet package. You can can't recover the delete data, so, use this command with care.
+
+xóa mysql: chú ý làm đúng thứ tự
+sudo apt-get remove --auto-remove mysql //hoac dung cai nay: sudo apt-get remove --purge mysql*
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo rm -rf /var/lib/mysql
+sudo rm -rf /etc/mysql
+
+fix lỗi ko mở đc ổ cứng trên ubuntu:
+sudo fdisk -l
+Tiếp đến xem ổ đĩa cần fix là gì ( Vd ở đây là /dev/sda2 )
+sudo ntfsfix /dev/sda2
+
+mysql: CHÚ Ý PHẢI STOP TRƯỚC KHI TẮT MÁY!
+service mysql status
+service mysql stop
+service mysql start 
+CHÚ Ý: TRƯỚC KHI TẮT MÁY PHẢI STOP MYSQL NẾU KO 10 PHÚT MỚI TẮT ĐC
+
+cách cài 1 phần mềm .deb:
+1. tải file về, gỉa sử là teamviewer_11.0.67687_i386.deb
+2. vào terminal , cd đến thư mục tải file trên
+3. gõ: sudo dpkg -i teamviewer_11.0.67687_i386.deb
+4. nếu xảy ra lỗi thì gõ lệnh : sudo apt-get -f install
+5. sau đó cài lại như bước 3
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  1,9G     0  1,9G   0% /dev
+tmpfs          tmpfs     388M  6,3M  382M   2% /run
+/dev/sda6      ext4       17G  7,3G  8,8G  46% /
+tmpfs          tmpfs     1,9G  224K  1,9G   1% /dev/shm
+tmpfs          tmpfs     5,0M  4,0K  5,0M   1% /run/lock
+tmpfs          tmpfs     1,9G     0  1,9G   0% /sys/fs/cgroup
+tmpfs          tmpfs     388M   92K  388M   1% /run/user/1000
+
+
+pin UBUNTU: 2,5min/%
+pin WINDOWS 8.1: 3,18min/%
+
+ctr+H: hien file an
+
+sudo apt-get update: để kiểm tra có bản cập nhật nào từ Internet không (tương tự khi bạn chọn Check ở Update Manager).
+Sau đó thực thi lệnh sudo apt-get upgrade để cập nhật.
+
+tắt máy:
+shutdown -h now: Để shutdown máy ngay lập tức
+shutdown -r now: Để reboot máy ngay lập tức
+shutdown -h +10: Lệnh này nói cho hệ thống biết sau 10 phút nữa hãy shutdown
+shutdown -t3 -r now . Lệnh này nói cho hệ thống biết sau 3 giây nữa hãy kill các process và shutdown máy.
+shutdown -h 01:00  .  Lệnh này nói cho hệ thống biết lúc 1 giờ đêm (nếu dùng +24h) hãy shutdown máy. Tương tự ta có thể thay -h bằng -r để reboot máy.
+
+sudo service cups-browsed stop
+sudo systemctl stop cups-browsed.service
+sudo systemctl disable cups-browsed.service
+sudo systemctl status cups-browsed : to check the status
+
+
+date install: 24/3/2017. Free space: 48.8GB
+after install android and netbean: 44,0GB
+after install theme Mac: 43.2GB
+26/3/17: install TLP to PREVENT OVERHEATING OF LAPTOPS IN LINUX: 42.9GB
+10/4/17: 40.1GB
+39.5
+sau khi cai xong netbeans: 38.6GB
+
+cp folder2 folder_3: ko copy cái gì từ folder2 sang folder_3 cả
+cp folder2/* folder_3: copy tất cả nội dung từ folder2 sang folder_3, trừ mọi thư mục trong folder2 thì ko đc copy sang
+
+đừng XÓA CÁI GÌ Ở Ổ C,D,E KHI ĐANG Ở UBUNTU
+
+========= 1 số font đẹp dành cho terminal (ở mục Monospact font):
+courier 10 Pitch
+courier new
+Freemono
+monospace
+tlwg typo
+
+========font cho default font:
+bitstream characer
+mry_kacstqurn
+macgrande
+lucida mac
+liberation
+century school
+dingbats
+
+
+thêm 1 file device:
+sudo mknod /dev/myTestDeviceFile c 1995 5
+
+======
+Hiển thị khi cắm máy chiếu:
+vào Settings/Displays, sau đó tích vào checkbox "mirror displays"
+
+==
+echo $PATH
+/home/anhtu/bin:/home/anhtu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+
+==
+Cách tạo permanent alias:
+1. sudo gedit ~/.bashrc
+2. add the alias to the bottom of your .bashrc file, for example:
+	# Tao Alias cho viec thiet lap PATH cho Maven, trong do emv nghia la export maven :))
+	alias emv='export PATH="/home/anhtu/Downloads/Programs/apache-maven-3.5.2/bin:$PATH"'
+3. Now execute 
+	. ~/.bashrc
+in your terminal 
+(NOTE: there should be a space between the . and ~/.bashrc)
+
+===
+anhtu51195@gmail.com
+
+
+
+

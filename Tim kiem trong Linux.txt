@@ -1,0 +1,95 @@
+sử dụng lệnh find trên Linux
+Sau đây là 20 ví dụ đơn giản thường được sử dụng.
+
+1. Tìm kiếm file theo tên file đầy đủ
+# find . vinahost.txt
+
+Kết quả:
+./vinahost.txt
+Lệnh trên sẽ tìm file có tên là vinahost.txt ( dấu . đại diện cho thư mục hiện hành).
+
+2. Tìm kiếm file theo tên không đầy đủ.
+ # find /  -name vinahost*
+
+Kết quả: 
+/home/vinahost1.php
+/var/vinahostabc.rar
+Lệnh trên sẽ tìm trên toàn bộ hệ thống file có tên bắt đầu bằng "vinahost"
+
+3. Tìm kiếm file với phần mở rộng.
+# find /home -name  *.php
+
+Kết quả:
+/home/vinahost.php
+/home/admin/login.php
+Lệnh trên sẽ tìm trong thư mục /home những file có tên bất kỳ, miễn nó có phần mở rộng là .php
+
+4. Tìm kiếm file ẩn
+# find / -type f -name ".*"
+
+5. Tìm kiếm file có owner là vinahost
+# find /home -user vinahost
+
+Lệnh trên sẽ tìm kiếm tất cả những file trong thư mục home có owner là vinahost
+
+6. Tìm kiếm file có group là vinahost
+# find /home -group vinahost
+Lệnh trên sẽ tìm kiếm tất cả những file trong thư mục home có group là vinahost
+
+7. Tìm kiếm file được phân quyền 777
+# find . -type f -perm 777 
+
+8. Tìm file chỉ có quyền read
+# find / -perm /u=r
+ 
+8. Tìm kiếm file rỗng
+# find /tmp -type f -empty
+
+9. Tìm kiếm file được chỉnh sửa trong vòng 50 ngày 
+# find / -mtime 50
+
+10. Tìm kiếm file được chỉnh sửa trong vòng 50 - 100 ngày
+# find / -mtime +50 –mtime -100
+
+11. Tìm kiếm file vừa được tạo ra trong vòng 1 giờ
+# find / -cmin -60
+
+12. Tìm kiếm file có dung lượng 50M
+# find / -size 50M
+
+13. Tìm kiếm file có dung lượng lớn hơn 50M nhỏ hơn 100M
+# find / -size +50M -size -100M
+
+
+14. Tìm thư mục có tên vinahost
+# find / -type d -name vinahost
+
+15. Tìm kiếm trên nhiều thư mục
+# find /opt /usr /var -name vinahost.txt -type f
+
+Lệnh trên sẽ tìm kiếm trên các thư mục /opt /usr  /var  tập tin vinahost.txt
+
+Phần 2. Tìm kiếm nâng cao, kết hợp với lệnh khác (rm, exec, cp, grep,..)
+
+16. Tìm và xoá file có dung lượng trên 100M
+# find / -size +100M -exec rm -rf {} \;
+
+17. Tìm và chmod 644 file có phần mở rộng là .html
+
+# find /usr/local -name "*.html" -type f -exec chmod 644 {} \; 
+ 
+18. Tìm file có phần mở rộng là .mp3 và copy file đó đến thư mục /tmp/MusicFiles
+
+# find . -type f -name "*.mp3" -exec cp {} /tmp/MusicFiles \;
+
+19. Tìm file có chứa nội dụng vinahost
+# find /home -type f -exec grep -l 'vinahost' {} \;
+
+20. Tìm file theo tên hoặc phần mở rộng hoặc kích thước (-o = OR)
+# find / \( -name '*.txt' -o -name 'doc*' -o -size +5M \)
+
+Lệnh trên sẽ tìm những file có phần mở rộng là .txt hoặc những file có tên bắt đầu bằng doc hoặc những file có kích thước lớn hơn 5M.
+
+=====
+
+
