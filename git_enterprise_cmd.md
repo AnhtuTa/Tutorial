@@ -37,7 +37,7 @@ $ git commit -m "your comment here"
 ```
 $ git commit --amend
 ```
-#### Now you need to push your changes to server. Remember, you're working on dev branch, and create new branch in order to create new pull request to merge this new branch to dev branch, so you have to pull all the newest changes from server from to branch first, and the use "rebase" to merge all these changes from dev to your_branch
+#### Now you need to push your changes to server. Remember, you're working on "dev" branch, and create new branch in order to create new pull request to merge this new branch to "dev" branch, so you have to pull all the newest changes from server to "dev" branch first, and the use "rebase" to merge all these changes from "dev" to "your_branch"
 ```
 $ git checkout dev  
 $ git pull origin dev  
