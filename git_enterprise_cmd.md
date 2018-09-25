@@ -21,11 +21,11 @@ $ git pull origin dev
 ```
 $ git checkout -b your_branch
 ```
-#### Now you change some file in your repository, after that, you want to commit these file to your branch, first, check some changes
+#### Now you change some files in your repository, after that, you want to commit these files to your branch, first, check some changes
 ```
 $ git status
 ```
-#### Add all changed file
+#### Add all changed files
 ```
 $ git add .
 ```
