@@ -29,6 +29,10 @@ $ git status
 ```
 $ git add .
 ```
+#### Assume that you don't want to commit some exceptional files, you can remove these files from commiting (file1 = path to file1):
+```
+$ git reset -- file1 file2 file3 ...
+```
 #### Commit these changed files: If this is the first commit, then use the following command
 ```
 $ git commit -m "your comment here"
