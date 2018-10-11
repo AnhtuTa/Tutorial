@@ -48,9 +48,10 @@ $ git pull origin dev
 $ git checkout your_branch  
 $ git rebase dev  
 ```
+After rebase from dev, some conflicts may exist. You have to resolve all of them to continue to the next step
 #### Now push you changes to server (use the -f option to force update to merge these changes to your previous commit on server ???)
 ```
-$ git push origin crud_service_client -f
+$ git push origin your_branch -f
 ```
 ## Done!
 
