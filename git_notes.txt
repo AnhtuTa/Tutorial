@@ -60,4 +60,3 @@ CHÚ Ý: SSH KEY
 - paste public key vào đây (copy từ file id_rsa.pub)
 - Xong! Bây giờ có thể thao tác với git từ cmd trên máy tính local mà ko cần nhập username/password!
 
-
