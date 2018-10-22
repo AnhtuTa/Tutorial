@@ -1,32 +1,16 @@
-﻿upload project QLSV lên Git:
-1. Vào https://github.com/AnhtuTa tạo repository tên là QLSV trên git
-2. Trên máy tính, vào thư mục project QLSV chọn Git bash here
-3. Gõ:
-$ git remote add QLSV https://github.com/AnhtuTa/QLSV.git
-$ git push --set-upstream QLSV master
-4. done!
-
-=== Cách trên sai nhé. Làm lại như sau (trên Git có hướng dẫn sau khi tạo repository)
 Giả sử cần upload repository có tên là Maven (upload cả thử mục này lên :))
 1. Vào thư mục đó, VD: cd D:/Documents/Maven
 2. git init
-3. git add *	//Thêm tất cả các file
+3. git add .	//Thêm tất cả các file
 4. git status	//check status
 5. git commit -m "This is just comment"
 6. git status
-7. git remote add origin https://github.com/AnhtuTa/Maven.git
+7. git remote add origin https://github.com/AnhtuTa/Maven.git	//origin là tên của remote, thường đặt như vậy
 8. git push -u origin master
 9. done!
 
-Nếu vẫn ko đc thì làm như sau:
-1,2,3,4,5,6: như trên
-7. git remote add github https://github.com/AnhtuTa/Maven.git
-8. git remote -v
-9. git push -f github master
-10. done!
-
 Sau này nếu có thay đổi gì thì update lên git như sau:
-git add *
+git add .
 git commit -m "some comments"
 git push
 
@@ -51,6 +35,8 @@ Cách làm việc với Git
 	git push -u origin master
   Sau đó từ lần sau chỉ cần xài:
   	git push
+- Xóa remote (VD xóa remote tên là origin):
+	git remote rm origin 
 
 ===
 Cách push lên git ko cần nhập user và pass:
@@ -63,5 +49,15 @@ git remote set-url origin git+ssh://git@github.com/username/reponame.git
 
 VD: git remote set-url origin git+ssh://git@github.com/AnhtuTa/Maven.git
 Bây giờ dùng git push ko cần nhập user và pass nữa!
+
+===
+CHÚ Ý: SSH KEY
+- Đầu tiên tạo tạo ssh key
+- Key tạo xong thường sẽ được lưu ở thư mục:
+  C:\your_user_name\.ssh
+- Trong thư mục này sẽ có 2 file: id_rsa và id_rsa.pub
+- Truy cập trang github.com > Settings > SSH and GPG keys > new SSH key
+- paste public key vào đây (copy từ file id_rsa.pub)
+- Xong! Bây giờ có thể thao tác với git từ cmd trên máy tính local mà ko cần nhập username/password!
 
 
