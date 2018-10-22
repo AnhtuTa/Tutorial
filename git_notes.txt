@@ -59,4 +59,3 @@ CHÚ Ý: SSH KEY
 - Truy cập trang github.com > Settings > SSH and GPG keys > new SSH key
 - paste public key vào đây (copy từ file id_rsa.pub)
 - Xong! Bây giờ có thể thao tác với git từ cmd trên máy tính local mà ko cần nhập username/password!
-
