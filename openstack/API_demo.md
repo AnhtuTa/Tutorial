@@ -53,7 +53,7 @@ KHÔNG được có dấu / ở cuối: như này http://20.0.1.10/compute/v2/se
 - tham khảo: https://developer.openstack.org/api-ref/compute/?expanded=#list-servers
 - Lấy tất cả servers :  
 GET: http://20.0.1.10/compute/v2/servers
-- Show info của 1 server có ID = 874db140-9857-476e-aab8-09bf9be39b6e:
+- Show info của 1 server có ID = 874db140-9857-476e-aab8-09bf9be39b6e:  
 GET: http://20.0.1.10/compute/v2/servers/874db140-9857-476e-aab8-09bf9be39b6e
 - ...
 - Insert 1 server:
