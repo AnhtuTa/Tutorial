@@ -37,17 +37,30 @@ Bây giờ có thể dùng token này để thực hiện việc gọi các API 
 
 ### 3. Call API
 - Vẫn vào trang sau, ta sẽ thấy có rất nhiều loại API được hỗ trợ:  
-https://developer.openstack.org/api-guide/quick-start/index.html
-- Ở đây demo phần compute API:  
-https://developer.openstack.org/api-ref/compute/
+https://developer.openstack.org/api-guide/quick-start/
+- Kéo xuống dưới phần Current API versions, sẽ thấy có khá nhiều loại API
+    + Compute API (microversions) (link: https://developer.openstack.org/api-ref/compute/): Các API liên quan đến server, instance, flavor, image...
+    + Identity API v3 (link: https://developer.openstack.org/api-ref/identity/v3/): Các API liên quan đến user, role, group, authen...
+    + Image service API v2 (link: https://developer.openstack.org/api-ref/image/v2/): Các API liên quan đến image
+    + ...
 
 #### 3.1. Service URLs
+- Reference: https://developer.openstack.org/api-ref/compute/#service-urls
 - All API calls described throughout the rest of this document require authentication with the OpenStack Identity service. After authentication, a base service url can be extracted from the Identity token of type compute. This service url will be the root url that every API call uses to build a full path.
 - For instance, if the service url is http://mycompute.pvt/compute/v2.1 then the full API call for /servers is http://mycompute.pvt/compute/v2.1/servers.
-- Tạm hiểu là: VD: Giả sử service URL là: http://20.0.1.10/compute/v2 thì API để lấy thông tin các servers là http://20.0.1.10/compute/v2/servers  
-- CHÚ Ý:  
-Cần thêm X-Auth-Token ở header để gọi các API)  
-KHÔNG được có dấu / ở cuối: như này http://20.0.1.10/compute/v2/servers/ thì sẽ ko gọi được API
+- Tạm hiểu là: VD: Giả sử service URL là: http://20.0.1.10/compute/v2 thì API để lấy thông tin các servers là http://20.0.1.10/compute/v2/servers
+- Cần phải biết service URL thì mới gọi được các API (liên hệ admin để xin URL này :v). Trong VD này có thể xem các service URL ở địa chỉ: http://20.0.1.10/dashboard/project/api_access/ (Server ở SVMC)
+- VD (IP của OpenStack server ở SVMC là http://20.0.1.10):
+
+| Service       |  Service endpoint             | API URL (example)                        |
+| ------------- | ----------------------------- | ---------------------------------------- |
+| Compute       | http://20.0.1.10/compute/v2.1 | http://20.0.1.10/compute/v2.1/servers    |
+| Identity      | http://20.0.1.10/identity     | http://20.0.1.10/identity/v3/auth/tokens |
+| Image         | http://20.0.1.10/image        | http://20.0.1.10/image/v2/images         |
+
+- CHÚ Ý:
+    + Cần thêm X-Auth-Token ở header để gọi các API)
+    + KHÔNG được có dấu / ở cuối: như này http://20.0.1.10/compute/v2/servers/ thì sẽ ko gọi được API
 
 #### 3.2. 1 số VD call API (từ trang chủ)
 - tham khảo: https://developer.openstack.org/api-ref/compute/?expanded=#list-servers
