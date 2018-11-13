@@ -17,7 +17,7 @@ $ git checkout dev
 ```
 $ git pull origin dev
 ```
-#### Create new branch (your own branch, example: your_branch)
+#### Create your own new branch to work on it (if your haven't created yet, example: your_branch)
 ```
 $ git checkout -b your_branch
 ```
@@ -48,15 +48,10 @@ $ git pull origin dev
 $ git checkout your_branch  
 $ git rebase dev  
 ```
-After rebase from dev, some conflicts may exist. You have to resolve all of them to continue to the next step
-#### Now push you changes to server (use the -f option to force update to merge these changes to your previous commit on server ???)
+- Note: when you rebase, if you encounter the error: "Cannot rebase: You have unstaged changes. Please commit or stash them.". Which means your branch has some changed files that haven't been committed. You have to commit all these changes before rebasing from dev
+- After rebase from dev, some conflicts may exist. You have to resolve all of them to continue to the next step
+#### Now push you changes to server (optional: use the -f option to force update to merge these changes to your previous commit on server)
 ```
 $ git push origin your_branch -f
 ```
 ## Done!
-
-
-### This is a demo for color
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
