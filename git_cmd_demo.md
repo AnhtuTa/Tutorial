@@ -54,7 +54,11 @@ $ git rebase dev
 ```
 - Note: when you rebase, if you encounter the error: "Cannot rebase: You have unstaged changes. Please commit or stash them.". Which means your branch has some changed files that haven't been committed. You have to commit all these changes before rebasing from dev
 - After rebase from dev, some conflicts may exist. You have to resolve all of them to continue to the next step
-#### Now push you changes to server (optional: use the -f option to force update to merge these changes to your previous commit on server)
+#### Now push you changes to server
+```
+$ git push origin your_branch
+```
+If you use commit --amend, then you have to add -f option (the -f option forces update to merge these changes to your previous commit on server):
 ```
 $ git push origin your_branch -f
 ```
