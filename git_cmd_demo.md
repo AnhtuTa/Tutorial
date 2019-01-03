@@ -35,7 +35,11 @@ $ git reset -- file1 file2 file3 ...
 ```
 Or if you haven't add changed files yet, and you want to undo a changed file on your local, use:
 ```
-$ git checkout -- filename
+$ git checkout -- file1
+```
+Or if you already added a changed file yet, and you want to undo a changed file to its original, use:
+```
+$ git checkout HEAD -- file1
 ```
 #### Commit these changed files: If this is the first commit, then use the following command
 ```
